@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FAVOR表單</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.material.min.css" />
+
+    <script src="http://cdn.kendostatic.com/2015.1.429/js/jquery.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.429/js/kendo.all.min.js"></script>
+</head>
+<body>
+    <div class="content-pane">
+        <div id="grid"></div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var UrlBase = "/";
+            $("#grid").kendoGrid({
+                dataSource: {
+                    pageSize: 5,
+                    dataType: "jsonp",
+                    transport: {
+                        read: {
+                            url: UrlBase+"api/Course",
+                            contentType: "application/json; charset=utf-8",
+                            type: "GET"
+                        },
+                        create: {
+                            url: UrlBase+"api/Course",
+                            contentType: "application/json; charset=utf-8",
+                            type: "POST"
+                        },
+                        update: {
+                            url: UrlBase+"api/Course",
+                            contentType: "application/json; charset=utf-8",
+                            type: "PUT"
+                        },
+                        destroy: {
+                            url: UrlBase + "api/Course",
+                            contentType: "application/json; charset=utf-8",
+                            type: "DELETE"
+                        },
+                        parameterMap: function (data, operation) {
+                            if (operation !== "read") {
+                                return kendo.stringify(data);
+                            }
+                        }
+                    },
+                    schema: {
+                        model: {
+                            List_ID: "List_ID",
+                            fields: {
+                                List_ID: { type: "string", editable: true, nullable: false },
+                                Product_Name: { type: "string", editable: true, nullable: false },
+                                Product_Num: { type: "int", editable: true },
+                                Customer_Name :{ type: "string", editable: true, nullable: false },
+                                Customer_Phone: { type: "int", editable: true, nullable: false },
+                                Customer_Email: { type: "string", editable: true, nullable: false },
+                                Send_Method: { type: "string", editable: true, nullable: false },
+                                List_Remark: { type: "string", editable: true, nullable: false },
+                            }
+                        }
+                    }
+
+                },
+                height: 550,
+                sortable: true,
+                scrollable: true,
+                sortable: true,
+                filterable: true,
+                editable: "inline",
+                toolbar: ["create"],
+                pageable: {
+                    input: true,
+                    numeric: false
+                },
+                columns: [
+                    { field: "List_ID", title: "表單編號", width: "160px" },
+                    { field: "Product_Name", title: "商品名稱", width: "160px" },
+                    { field: "Product_Num", title: "產品數量", width: "160px" },
+                    { field: "Customer_Name", title: "客戶名稱", width: "160px" },
+                    { field: "Customer_Phone", title: "客戶電話", width: "160px" },
+                    { field: "Customer_Email", title: "客戶信箱", width: "160px" },
+                    { field: "Send_Method", title: "寄送方式", width: "160px" },
+                    { field: "List_Remark", title: "備註", width: "160px" },
+                    { command: ["edit", "destroy"], title: "Command", width: "250px" }
+                ]
+            });
+
+        });
+    </script>
+</body>
+</html>
