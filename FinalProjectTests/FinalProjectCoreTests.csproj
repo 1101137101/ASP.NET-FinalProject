@@ -101,7 +101,7 @@
     <Compile Include="Services\Impl\CourseServiceUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KuasCore\FinalProjectCore.csproj">
+    <ProjectReference Include="..\FinalProjectCore\FinalProjectCore.csproj">
       <Project>{c4bbce56-ecd7-494c-9731-5093f529df69}</Project>
       <Name>FinalProjectCore</Name>
     </ProjectReference>
