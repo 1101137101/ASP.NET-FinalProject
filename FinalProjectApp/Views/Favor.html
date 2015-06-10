@@ -23,22 +23,22 @@
                     dataType: "jsonp",
                     transport: {
                         read: {
-                            url: UrlBase + "api/Course",
+                            url: UrlBase + "api/Favor",
                             contentType: "application/json; charset=utf-8",
                             type: "GET"
                         },
                         create: {
-                            url: UrlBase + "api/Course",
+                            url: UrlBase + "api/Favor",
                             contentType: "application/json; charset=utf-8",
                             type: "POST"
                         },
                         update: {
-                            url: UrlBase + "api/Course",
+                            url: UrlBase + "api/Favor",
                             contentType: "application/json; charset=utf-8",
                             type: "PUT"
                         },
                         destroy: {
-                            url: UrlBase + "api/Course",
+                            url: UrlBase + "api/Favor",
                             contentType: "application/json; charset=utf-8",
                             type: "DELETE"
                         },
@@ -50,16 +50,17 @@
                     },
                     schema: {
                         model: {
-                            List_ID: "List_ID",
+                            Form_ID: "Form_ID",
                             fields: {
-                                List_ID: { type: "string", editable: true, nullable: false },
+                                Form_ID: { type: "int", editable: false, nullable: false },
                                 Product_Name: { type: "string", editable: true, nullable: false },
-                                Product_Num: { type: "int", editable: true },
+                                Product_Num: { type: "int", editable: true, nullable: false },
                                 Customer_Name: { type: "string", editable: true, nullable: false },
-                                Customer_Phone: { type: "int", editable: true, nullable: false },
+                                Customer_Phone: { type: "string", editable: true, nullable: false },
                                 Customer_Email: { type: "string", editable: true, nullable: false },
                                 Send_Method: { type: "string", editable: true, nullable: false },
-                                List_Remark: { type: "string", editable: true, nullable: false },
+                                Form_Remark: { type: "string", editable: true, nullable: true },
+                                
                             }
                         }
                     }
@@ -89,5 +90,6 @@
             });
         });
     </script>
+    
 </body>
 </html>

@@ -1,6 +1,6 @@
-﻿using KuasCore.Dao;
-using KuasCore.Models;
-using KuasCore.Services.Impl;
+﻿using FinalProjectCore.Dao;
+using FinalProjectCore.Models;
+using FinalProjectCore.Services.Impl;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Spring.Testing.Microsoft;
 using System;
@@ -31,19 +31,19 @@ namespace KuasCoreTests.Dao
 
         #endregion
 
-        public ICourseDao CourseDao { get; set; }
+        public IFavorDao CourseDao { get; set; }
 
 
         [TestMethod]
         public void TestCourseDao_AddCourse()
         {
-            Course course = new Course();
+            Favor course = new Favor();
             course.Id = "UnitTests";
             course.Name = "單元測試";
             course.Description = "請做出單元測試";
-            CourseDao.AddCourse(course);
+            CourseDao.AddFavor(course);
 
-            Course dbCourse = CourseDao.GetCourseByName(course.Name);
+            Favor dbCourse = CourseDao.GetCourseByName(course.Name);
             Assert.IsNotNull(dbCourse);
             Assert.AreEqual(course.Name, dbCourse.Name);
 

@@ -1,6 +1,6 @@
 ﻿using Core;
-using KuasCore.Models;
-using KuasCore.Services;
+using FinalProjectCore.Models;
+using FinalProjectCore.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Spring.Context;
 using Spring.Testing.Microsoft;
@@ -33,19 +33,19 @@ namespace KuasCoreTests.Services.Impl
 
         #endregion
 
-        public ICourseService CourseService { get; set; }
+        public IFavorService CourseService { get; set; }
 
         [TestMethod]
         public void TestCourseService_AddCourse()
         {
 
-            Course course = new Course();
+            Favor course = new Favor();
             course.Id = "UnitTests";
             course.Name = "單元測試";
             course.Description = "請做出單元測試";
             CourseService.AddCourse(course);
 
-            Course dbCourse = CourseService.GetCourseByName(course.Name);
+            Favor dbCourse = CourseService.GetCourseByName(course.Name);
             Assert.IsNotNull(dbCourse);
             Assert.AreEqual(course.Name, dbCourse.Name);
 

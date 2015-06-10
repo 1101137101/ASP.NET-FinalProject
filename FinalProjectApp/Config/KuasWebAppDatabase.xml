@@ -36,7 +36,7 @@
   </tx:advice>
 
   <object id="serviceTxPointcut" type="Spring.Aop.Support.SdkRegularExpressionMethodPointcut, Spring.Aop">
-    <property name="Pattern" value="KuasCore.Services.Impl.*Service"/>
+    <property name="Pattern" value="FinalProjectCore.Services.Impl.*Service"/>
   </object>
 
   <aop:config>

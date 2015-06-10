@@ -1,5 +1,6 @@
-﻿using KuasCore.Models;
-using KuasCore.Services;
+﻿using FinalProjectCore.Models;
+using FinalProjectCore.Services;
+using FinalProjectCore.Services.Impl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,21 +8,21 @@ using System.Net;
 using System.Web;
 using System.Web.Http;
 
-namespace KuasWebApp.Controllers
+namespace FinalProjectWebApp.Controllers
 {
-    public class CourseController : ApiController
+    public class FavorController : ApiController
     {
 
-        public ICourseService CourseService { get; set; }
+        public IFavorService FavorService { get; set; }
 
         [HttpPost]
-        public Course AddCourse(Course course)
+        public Favor AddFavor(Favor favor)
         {
-            CheckCourseIsNotNullThrowException(course);
+            CheckFavorIsNotNullThrowException(favor);
 
             try
             {
-                return CourseService.AddCourse(course);
+                return FavorService.AddFavor(favor);
             }
             catch (Exception)
             {
@@ -30,14 +31,14 @@ namespace KuasWebApp.Controllers
         }
 
         [HttpPut]
-        public Course UpdateCourse(Course course)
+        public Favor UpdateFavor(Favor favor)
         {
-            CheckCourseIsNullThrowException(course);
+            CheckFavorIsNullThrowException(favor);
 
             try
             {
-                CourseService.UpdateCourse(course);
-                return CourseService.GetCourseByName(course.Name);
+                FavorService.UpdateFavor(favor);
+                return FavorService.GetFavorByName(favor.Product_Name);
             }
             catch (Exception)
             {
@@ -46,11 +47,11 @@ namespace KuasWebApp.Controllers
         }
 
         [HttpDelete]
-        public void DeleteEmployee(Course course)
+        public void DeleteFavor(Favor favor)
         {
             try
             {
-                CourseService.DeleteCourse(course);
+                FavorService.DeleteFavor(favor);
             }
             catch (Exception)
             {
@@ -59,49 +60,49 @@ namespace KuasWebApp.Controllers
         }
 
         [HttpGet]
-        public IList<Course> GetAllCourse()
+        public IList<Favor> GetAllFavor()
         {
-            return CourseService.GetAllCourse();
+            return FavorService.GetAllFavor();
         }
 
         [HttpGet]
-        public Course GetCourseById(string id)
+        public Favor GetFavorById(Int32 Form_ID)
         {
-            var course = CourseService.GetCourseById(id);
+            var favor = FavorService.GetFavorById(Form_ID);
 
-            if (course == null)
+            if (favor == null)
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            return course;
+            return favor;
         }
 
         [HttpGet]
-        [ActionName("Name")]
-        public Course GetCourseByName(string input)
+        [ActionName("Product_Name")]
+        public Favor GetFavorByName(string input)
         {
-            var course = CourseService.GetCourseByName(input);
+            var favor = FavorService.GetFavorByName(input);
 
-            if (course == null)
+            if (favor == null)
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            return course;
+            return favor;
         }
 
         /// <summary>
         ///     檢查課程資料是否存在，如果不存在則拋出錯誤.
         /// </summary>
-        /// <param name="course">
+        /// <param name="favor">
         ///     課程資料.
         /// </param>
-        private void CheckCourseIsNullThrowException(Course course)
+        private void CheckFavorIsNullThrowException(Favor favor)
         {
-            Course dbCourse = CourseService.GetCourseById(course.Id);
+            Favor dbFavor = FavorService.GetFavorById(favor.Form_ID);
 
-            if (dbCourse == null)
+            if (dbFavor == null)
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
@@ -110,14 +111,14 @@ namespace KuasWebApp.Controllers
         /// <summary>
         ///     檢查課程資料是否存在，如果存在則拋出錯誤.
         /// </summary>
-        /// <param name="course">
+        /// <param name="favor">
         ///     課程資料.
         /// </param>
-        private void CheckCourseIsNotNullThrowException(Course course)
+        private void CheckFavorIsNotNullThrowException(Favor favor)
         {
-            Course dbCourse = CourseService.GetCourseById(course.Id);
+            Favor dbFavor = FavorService.GetFavorById(favor.Form_ID);
 
-            if (dbCourse != null)
+            if (dbFavor != null)
             {
                 throw new HttpResponseException(HttpStatusCode.Conflict);
             }

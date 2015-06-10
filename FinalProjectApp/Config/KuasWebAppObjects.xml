@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <objects xmlns="http://www.springframework.net">
   
-  <object id="courseController" scope="request" singleton="false" type="KuasWebApp.Controllers.CourseController, KuasWebApp">
-    <property name="CourseService" ref="courseService" />
+  <object id="favorController" scope="request" singleton="false" type="FinalProjectWebApp.Controllers.FavorController">
+    <property name="FavorService" ref="favorService" />
   </object>
 
-  <object id="courseService" type="KuasCore.Services.Impl.CourseService, KuasCore">
-    <property name="CourseDao" ref="courseDao" />
+  <object id="favorService" type="FinalProjectCore.Services.Impl.FavorService">
+    <property name="FavorDao" ref="favorDao" />
   </object>
 
-  <object id="courseDao" type="KuasCore.Dao.Impl.CourseDao, KuasCore">
+  <object id="favorDao" type="FinalProjectCore.Dao.Impl.FavorDao">
     <property name="AdoTemplate" ref="adoTemplate" />
   </object>
   
