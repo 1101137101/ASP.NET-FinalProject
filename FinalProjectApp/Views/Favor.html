@@ -50,7 +50,7 @@
                     },
                     schema: {
                         model: {
-                            Form_ID: "Form_ID",
+                            id: "Form_ID",
                             fields: {
                                 Form_ID: { type: "int", editable: false, nullable: false },
                                 Product_Name: { type: "string", editable: true, nullable: false },
@@ -59,14 +59,13 @@
                                 Customer_Phone: { type: "string", editable: true, nullable: false },
                                 Customer_Email: { type: "string", editable: true, nullable: false },
                                 Send_Method: { type: "string", editable: true, nullable: false },
-                                Form_Remark: { type: "string", editable: true, nullable: true },
+                                Form_Remark: { type: "string", editable: true},
                                 
                             }
                         }
                     }
                 },
                 height: 550,
-                sortable: true,
                 scrollable: true,
                 sortable: true,
                 filterable: true,

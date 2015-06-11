@@ -20,14 +20,14 @@ namespace FinalProjectWebApp.Controllers
         {
             CheckFavorIsNotNullThrowException(favor);
 
-            try
-            {
+            //try
+            //{
                 return FavorService.AddFavor(favor);
-            }
-            catch (Exception)
-            {
-                throw new HttpResponseException(HttpStatusCode.InternalServerError);
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    throw new HttpResponseException(HttpStatusCode.InternalServerError);
+            //}
         }
 
         [HttpPut]
