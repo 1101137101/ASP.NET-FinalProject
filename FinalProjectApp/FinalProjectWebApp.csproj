@@ -158,6 +158,10 @@
     <Content Include="images\flogo.png" />
     <Content Include="images\footer-social.png" />
     <Content Include="images\home.png" />
+    <Content Include="images\img-4.jpg" />
+    <Content Include="images\img-5.jpg" />
+    <Content Include="images\img-6.jpg" />
+    <Content Include="images\img-7.jpg" />
     <Content Include="images\img-w.jpg" />
     <Content Include="images\kid-r-img.jpg" />
     <Content Include="images\list-icon.png" />
@@ -166,6 +170,7 @@
     <Content Include="images\mail-icon.png" />
     <Content Include="images\man-r-img.jpg" />
     <Content Include="images\nav-icon.png" />
+    <Content Include="images\obj1.gif" />
     <Content Include="images\obj1.png" />
     <Content Include="images\obj2.png" />
     <Content Include="images\obj3.png" />
