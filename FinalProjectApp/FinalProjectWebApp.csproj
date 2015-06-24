@@ -250,6 +250,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Views\about.html" />
     <Content Include="Views\form.html" />
     <Content Include="Views\index.html" />
     <Content Include="Views\pay.html" />
