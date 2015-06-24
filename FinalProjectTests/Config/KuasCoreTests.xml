@@ -2,11 +2,11 @@
 
 <objects xmlns="http://www.springframework.net">
 
-  <object id="courseService" type="KuasCore.Services.Impl.CourseService, KuasCore">
-    <property name="CourseDao" ref="courseDao" />
+  <object id="favorService" type="FinalProjectCore.Services.Impl.FavorService, FinalProjectCore">
+    <property name="FavorDao" ref="favorDao" />
   </object>
 
-  <object id="courseDao" type="KuasCore.Dao.Impl.CourseDao, KuasCore">
+  <object id="favorDao" type="FinalProjectCore.Dao.Impl.FavorDao, FinalProjectCore">
     <property name="AdoTemplate" ref="adoTemplate" />
   </object>
 

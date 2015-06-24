@@ -14,7 +14,7 @@
 
   <!-- LocalDB 連線設定, Windows 認證 -->
   <db:provider id="dbProvider" provider="SqlServer-2.0"
-    connectionString="Data Source=JAMES_NB\SQLEXPRESS;Initial Catalog=KUAS;Integrated Security=True;MultipleActiveResultSets=True;"/>
+    connectionString="Data Source=(localdb)\v11.0;Initial Catalog=KUAS;Integrated Security=True;MultipleActiveResultSets=True;"/>
 
   <object id="adoTemplate" type="Spring.Data.Generic.AdoTemplate, Spring.Data">
     <property name="DbProvider" ref="dbProvider"/>
@@ -37,7 +37,7 @@
   </tx:advice>
 
   <object id="serviceTxPointcut" type="Spring.Aop.Support.SdkRegularExpressionMethodPointcut, Spring.Aop">
-    <property name="Pattern" value="KuasCore.Services.Impl.*Service" />
+    <property name="Pattern" value="FinalProjectCore.Services.Impl.*Service" />
   </object>
 
   <aop:config>
