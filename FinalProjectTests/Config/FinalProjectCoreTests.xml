@@ -2,14 +2,14 @@
 
 <objects xmlns="http://www.springframework.net">
 
-  <object id="favorService" type="FinalProjectCore.Services.Impl.FavorService, FinalProjectCore">
+  <object id="FavorService" type="FinalProjectCore.Services.Impl.FavorService">
     <property name="FavorDao" ref="favorDao" />
   </object>
 
-  <object id="favorDao" type="FinalProjectCore.Dao.Impl.FavorDao, FinalProjectCore">
+  <object id="favorDao" type="FinalProjectCore.Dao.Impl.FavorDao">
     <property name="AdoTemplate" ref="adoTemplate" />
   </object>
 
-  
+
 
 </objects>

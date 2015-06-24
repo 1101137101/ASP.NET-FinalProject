@@ -6,7 +6,7 @@
     <ProjectGuid>{D1E916CA-F60B-4A04-9F79-4E0A6392277A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KuasCoreTests</RootNamespace>
+    <RootNamespace>FinalProjectCoreTests</RootNamespace>
     <AssemblyName>KuasCoreTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -111,18 +111,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Config\KuasCoreDatabase.xml">
+    <EmbeddedResource Include="Config\FinalProjectCoreDatabase.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Config\KuasCoreTests.xml">
+    <EmbeddedResource Include="Config\FinalProjectCoreTests.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Config\KuasCorePointcut.xml">
+    <EmbeddedResource Include="Config\FinalProjectCorePointcut.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </EmbeddedResource>

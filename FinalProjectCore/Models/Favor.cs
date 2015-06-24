@@ -28,5 +28,11 @@ namespace FinalProjectCore.Models
         {
             return "favor: Form_ID = " + Form_ID + ", Product_Name = " + Product_Name + ".";
         }
+
+        public object Name { get; set; }
+
+        public string Id { get; set; }
+
+        public string Num { get; set; }
     }
 }

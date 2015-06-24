@@ -128,14 +128,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Config\KuasWebAppObjects.xml">
+    <EmbeddedResource Include="Config\FinalProjectWebAppObjects.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Config\KuasWebAppDatabase.xml">
+    <EmbeddedResource Include="Config\FinalProjectWebAppDatabase.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Config\KuasWebAppPointcut.xml">
+    <EmbeddedResource Include="Config\FinalProjectWebAppPointcut.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </EmbeddedResource>
