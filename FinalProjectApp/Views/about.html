@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>關於我們</title>
+    <link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <script src="../js/jquery.min.js"></script>
+    <link href="../css/style.css" rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="../js/move-top.js"></script>
+    <script type="text/javascript" src="../js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <script>
+        $(function () {
+            var pull = $('#pull');
+            menu = $('nav ul');
+            menuHeight = menu.height();
+            $(pull).on('click', function (e) {
+                e.preventDefault();
+                menu.slideToggle();
+            });
+            $(window).resize(function () {
+                var w = $(window).width();
+                if (w > 320 && menu.is(':hidden')) {
+                    menu.removeAttr('style');
+                }
+            });
+        });
+    </script>
+    <style>
+        #text {
+            vertical-align: middle;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-header">
+            <div class="logo">
+                <a href="index.html"><img src="../images/logo.jpg" title="barndlogo" /></a>
+            </div>
+            <div class="top-header-info">
+                <div class="top-contact-info">
+                    <ul class="unstyled-list list-inline">
+                        <li><span class="phone"> </span>09-101-121-52</li>
+                        <li>
+                            <span class="mail"> </span>
+                            <a href="#">ming-pei-fen@kuas.edu.tw</a>
+                        </li>
+                        <div class="clearfix"> </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="top-header-nav">
+            <nav class="top-nav main-menu">
+                <ul class="top-nav">
+                    <li>
+                        <a href="about.html">關於我們</a>
+                        <span> </span>
+                    </li>
+                    <li>
+                        <a href="pay.html">付款方式</a>
+                        <span> </span>
+                    </li>
+                    <li>
+                        <a href="form.html">表單填寫</a>
+                        <span> </span>
+                    </li>
+                </ul>
+                <a href="#" id="pull"><img src="../images/nav-icon.png" title="menu" /></a>
+            </nav>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div id="text">
+        <h1>WELCOME  ^_^</h1>
+
+        我們有賣各種客製化商品如下：
+        <br />
+        <br />
+        <img src="../images/pdlist.png" title="pdlist" />
+        <br />
+        <br />
+        ※ 下單後，如有需要請悄悄話討論樣式
+        <br />
+        <br />
+        ※ 不改圖者直接提供所需文字即可
+        <br />
+        <br />
+        ※  想改圖者請E  M  A  I L提供文字 及 圖檔唷 ^_^
+        <br />
+        <br />
+        E  M  A  I L:  g 5 0 1 1 9 1 g @ g m a i l . c o m
+        <br />
+        不介意加 L I N E 者 可以提供L I N E唷^^
+        <br />
+        小編會盡快為您服務
+        <br />
+        <br />
+        <h5>_____________________________________________________________________________</h5>
+        <br />
+        <br />
+        <h3> ♥大量訂購可接受議價<br /></h3>
+        <br />
+        <h3> ♥訂購多件商品可合併寄送<br /></h3>
+        <br />
+        ※  買家需先付款（3.超商取貨付款除外），商品可選擇：
+        <br />
+        <br />
+        1.郵寄     2.超商純取貨（7-11、全家、萊爾富、OK超商）
+        <br />
+        <br />
+        3.超商取貨付款（7-11、全家、萊爾富、OK超商）
+        <br />
+        <br />
+        4.面交（高雄市區/台南市  私訊詳談）
+        <br />
+        <br />
+        <h5>_____________________________________________________________________________</h5>
+        <br />
+        <br />
+        商品製作需要3~5天時間，能耐心等候者，再行下標唷
+        <br />
+        <br />
+        若為「急件」可說一聲，可盡快為您製作
+        <br />
+        <br />
+        不懂都可以問與答喔~感謝您
+        <br />
+
+        <br />
+        <br />
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-3 footer-logo">
+                <a href="index.html"><img src="../images/logo.jpg" title="brand-logo" /></a>
+            </div>
+            <div class="col-md-7 footer-links">
+                <ul class="unstyled-list list-inline">
+                    <li></li>
+                    <li></li>
+                    <li> ASP.NET<span> </span></li>
+                    <li>許家銘 <span> </span></li>
+                    <li>魏沛凌 <span> </span></li>
+                    <li>吳碧分 <span> </span></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</body>
+</html>
