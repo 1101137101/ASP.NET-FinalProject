@@ -254,6 +254,7 @@
     <Content Include="Views\contact.html" />
     <Content Include="Views\form.html" />
     <Content Include="Views\index.html" />
+    <Content Include="Views\pay.html" />
     <Content Include="Views\product-key.html" />
     <Content Include="Views\product-coaster.html" />
     <Content Include="Views\product-water.html" />
