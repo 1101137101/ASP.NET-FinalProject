@@ -26,6 +26,7 @@
     <script>
         $(document).ready(function () {
             var UrlBase = "/";
+
             $("#grid").kendoGrid({
                 dataSource: {
                     pageSize: 5,
@@ -103,16 +104,12 @@
                         },
                     },
                 },
-                editable: {
-                    mode: "popup",
-                    update: true,
-                },
                 toolbar: [{ name: "create", text: "新增顧客訂單" }],
                 pageable: {
                     input: true,
                     numeric: true,
                     messages: {
-                        display: "顯示頁數 {0} - {1} 共 {2}",
+                        display: "顯示頁數 {0} - {1} 共 {2} 頁",
                         empty: "沒有可顯示的紀錄。",
                         page: "頁",
                         of: "共 {0}"
@@ -133,7 +130,14 @@
                         { name: "destroy", text: "刪除" }
                         ], title: " ", width: "150px"
                     }
-                ]
+                ],
+                editable: {
+                    confirmation: "確定要刪除嗎？",
+                    mode: "popup",
+                    update: true,
+                    destroy: true,
+                    editRecurringMode: "series"
+                },
             });
             $("#grid").on("click", ".k-grid-edit , .k-grid-add", function () {
                 $('.k-grid-update').text('儲存');
