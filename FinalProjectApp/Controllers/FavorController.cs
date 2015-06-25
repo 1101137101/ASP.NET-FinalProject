@@ -93,10 +93,10 @@ namespace FinalProjectWebApp.Controllers
         }
 
         /// <summary>
-        ///     檢查課程資料是否存在，如果不存在則拋出錯誤.
+        ///     檢查訂單資料是否存在，如果不存在則拋出錯誤.
         /// </summary>
         /// <param name="favor">
-        ///     課程資料.
+        ///     訂單資料.
         /// </param>
         private void CheckFavorIsNullThrowException(Favor favor)
         {
@@ -109,10 +109,10 @@ namespace FinalProjectWebApp.Controllers
         }
 
         /// <summary>
-        ///     檢查課程資料是否存在，如果存在則拋出錯誤.
+        ///     檢查訂單資料是否存在，如果存在則拋出錯誤.
         /// </summary>
         /// <param name="favor">
-        ///     課程資料.
+        ///     訂單資料.
         /// </param>
         private void CheckFavorIsNotNullThrowException(Favor favor)
         {
