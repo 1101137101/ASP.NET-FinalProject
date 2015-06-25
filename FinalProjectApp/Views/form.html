@@ -61,9 +61,9 @@
                         model: {
                             id: "Form_ID",
                             fields: {
-                                Form_ID: { type: "number", editable: false, nullable: false },
+                                Form_ID: { type: "int", editable: false, nullable: false },
                                 Product_Name: { type: "string", editable: true, nullable: false, validation: { required: true } },
-                                Product_Num: { type: "number", editable: true, nullable: false, validation: { required: true } },
+                                Product_Num: { type: "number", editable: true, nullable: false, validation: { min: 0, required: true } },
                                 Customer_Name: { type: "string", editable: true, nullable: false, validation: { required: true } },
                                 Customer_Phone: { type: "string", editable: true, nullable: false, validation: { required: true } },
                                 Customer_Email: { type: "email", editable: true, nullable: false, validation: { required: true } },
@@ -112,16 +112,16 @@
                     input: true,
                     numeric: true,
                     messages: {
+                        display: "顯示頁數 {0} - {1} 共 {2}",
                         empty: "沒有可顯示的紀錄。",
                         page: "頁",
-                        of: "共 {0}",
-                        allPages: "All Pages"
+                        of: "共 {0}"
                     },
                 },
                 columns: [
                     { field: "Form_ID", title: "訂單編號", width: "150px" },
                     { field: "Product_Name", title: "商品名稱", width: "150px" },
-                    { field: "Product_Num", title: "商品數量", width: "150px" },
+                    { field: "Product_Num", title: "商品數量", width: "150px", format: "{0:0}" },
                     { field: "Customer_Name", title: "客戶名稱", width: "150px" },
                     { field: "Customer_Phone", title: "客戶電話", width: "150px" },
                     { field: "Customer_Email", title: "客戶信箱", width: "150px" },
