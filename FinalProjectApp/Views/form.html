@@ -62,14 +62,13 @@
                             id: "Form_ID",
                             fields: {
                                 Form_ID: { type: "int", editable: false, nullable: false },
-                                Product_Name: { type: "string", editable: true, nullable: false },
-                                Product_Num: { type: "int", editable: true, nullable: false },
-                                Customer_Name: { type: "string", editable: true, nullable: false },
-                                Customer_Phone: { type: "string", editable: true, nullable: false },
-                                Customer_Email: { type: "string", editable: true, nullable: false },
-                                Send_Method: { type: "string", editable: true, nullable: false },
+                                Product_Name: { type: "string", editable: true, nullable: false, validation :{required: true} },
+                                Product_Num: { type: "number", editable: true, nullable: false, validation: { required: true } },
+                                Customer_Name: { type: "string", editable: true, nullable: false, validation: { required: true } },
+                                Customer_Phone: { type: "string", editable: true, nullable: false, validation: { required: true } },
+                                Customer_Email: { type: "email", editable: true, nullable: false, validation: { required: true } },
+                                Send_Method: { type: "string", editable: true, nullable: false, validation: { required: true } },
                                 Form_Remark: { type: "string", editable: true },
-
                             }
                         }
                     }
