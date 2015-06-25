@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>表單填寫</title>
+    <title>訂單填寫</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.common-material.min.css" />
     <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.min.css" />
@@ -62,7 +62,7 @@
                             id: "Form_ID",
                             fields: {
                                 Form_ID: { type: "int", editable: false, nullable: false },
-                                Product_Name: { type: "string", editable: true, nullable: false, validation :{required: true} },
+                                Product_Name: { type: "string", editable: true, nullable: false, validation: { required: true } },
                                 Product_Num: { type: "number", editable: true, nullable: false, validation: { required: true } },
                                 Customer_Name: { type: "string", editable: true, nullable: false, validation: { required: true } },
                                 Customer_Phone: { type: "string", editable: true, nullable: false, validation: { required: true } },
@@ -77,14 +77,17 @@
                 scrollable: true,
                 sortable: true,
                 filterable: true,
-                editable: "inline",
-                toolbar: ["create"],
+                editable: {
+                    mode: "popup",
+                    update: true,
+                },
+                toolbar: [{ name: "create", text: "新增顧客訂單" }],
                 pageable: {
                     input: true,
                     numeric: false
                 },
                 columns: [
-                    { field: "Form_ID", title: "表單編號", width: "150px" },
+                    { field: "Form_ID", title: "訂單編號", width: "150px" },
                     { field: "Product_Name", title: "商品名稱", width: "150px" },
                     { field: "Product_Num", title: "商品數量", width: "150px" },
                     { field: "Customer_Name", title: "客戶名稱", width: "150px" },
@@ -92,9 +95,20 @@
                     { field: "Customer_Email", title: "客戶信箱", width: "150px" },
                     { field: "Send_Method", title: "寄送方式", width: "150px" },
                     { field: "Form_Remark", title: "備註", width: "150px" },
-                    { command: ["edit", "destroy"], title: "Command", width: "250px" }
+                    {
+                        command: [
+                        { name: "edit", text: "修改" },
+                        { name: "destroy", text: "刪除" }
+                        ], title: "　功能", width: "150px"
+                    }
                 ]
             });
+            $("#grid").on("click", ".k-grid-edit , .k-grid-add", function () {
+                $('.k-grid-update').text('儲存');
+                $('.k-grid-cancel').text('取消');
+                $('.k-window-title').text('訂單資料');
+            })
+
         });
     </script>
     <br>
