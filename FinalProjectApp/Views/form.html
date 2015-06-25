@@ -61,7 +61,7 @@
                         model: {
                             id: "Form_ID",
                             fields: {
-                                Form_ID: { type: "int", editable: false, nullable: false },
+                                Form_ID: { type: "number", editable: false, nullable: false },
                                 Product_Name: { type: "string", editable: true, nullable: false, validation: { required: true } },
                                 Product_Num: { type: "number", editable: true, nullable: false, validation: { required: true } },
                                 Customer_Name: { type: "string", editable: true, nullable: false, validation: { required: true } },
@@ -76,7 +76,33 @@
                 height: 550,
                 scrollable: true,
                 sortable: true,
-                filterable: true,
+                filterable: {
+                    messages: {
+                        info: "尋找符合以下條件的訂單：",
+                        filter: "過濾",
+                        clear: "清除",
+                        and: "並且",
+                        or: "或",
+                    },
+                    operators: {
+                        string: {
+                            eq: "等於",
+                            neq: "不等於",
+                            startswith: "開頭為",
+                            contains: "包含",
+                            doesnotcontain: "不包含",
+                            endswith: "結尾為"
+                        },
+                        number: {
+                            eq: "等於",
+                            neq: "不等於",
+                            gte: "大於等於",
+                            gt: "大於",
+                            lte: "小於等於",
+                            lt: "小於"
+                        },
+                    },
+                },
                 editable: {
                     mode: "popup",
                     update: true,
@@ -84,7 +110,13 @@
                 toolbar: [{ name: "create", text: "新增顧客訂單" }],
                 pageable: {
                     input: true,
-                    numeric: false
+                    numeric: true,
+                    messages: {
+                        empty: "沒有可顯示的紀錄。",
+                        page: "頁",
+                        of: "共 {0}",
+                        allPages: "All Pages"
+                    },
                 },
                 columns: [
                     { field: "Form_ID", title: "訂單編號", width: "150px" },
@@ -99,7 +131,7 @@
                         command: [
                         { name: "edit", text: "修改" },
                         { name: "destroy", text: "刪除" }
-                        ], title: "　功能", width: "150px"
+                        ], title: " ", width: "150px"
                     }
                 ]
             });
@@ -107,8 +139,7 @@
                 $('.k-grid-update').text('儲存');
                 $('.k-grid-cancel').text('取消');
                 $('.k-window-title').text('訂單資料');
-            })
-
+            });
         });
     </script>
     <br>
