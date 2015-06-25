@@ -63,7 +63,7 @@
                             fields: {
                                 Form_ID: { type: "int", editable: false, nullable: false },
                                 Product_Name: { type: "string", editable: true, nullable: false, validation: { required: true } },
-                                Product_Num: { type: "number", editable: true, nullable: false, validation: { min: 0, required: true } },
+                                Product_Num: { type: "number", editable: true, nullable: false, validation: { min: 1, required: true } },
                                 Customer_Name: { type: "string", editable: true, nullable: false, validation: { required: true } },
                                 Customer_Phone: { type: "string", editable: true, nullable: false, validation: { required: true } },
                                 Customer_Email: { type: "email", editable: true, nullable: false, validation: { required: true } },
@@ -78,8 +78,8 @@
                 sortable: true,
                 filterable: {
                     messages: {
-                        info: "尋找符合以下條件的訂單：",
-                        filter: "過濾",
+                        info: "查詢符合以下條件的訂單：",
+                        filter: "查詢",
                         clear: "清除",
                         and: "並且",
                         or: "或",
